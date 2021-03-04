@@ -1,0 +1,54 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="smsgw" transaction-type="RESOURCE_LOCAL">
+        <class>vn.vnpay.bean.Keyword</class>
+        <class>vn.vnpay.entities.ChannelQueryDto</class>
+        <class>vn.vnpay.entities.PartnerQueryDto</class>
+        <class>vn.vnpay.entities.PrefixQueryDto</class>
+        <class>vn.vnpay.entities.ProviderQueryDto</class>
+        <class>vn.vnpay.entities.RoutingQueryDto</class>
+        <class>vn.vnpay.entities.KeywordQueryDto</class>
+        <class>vn.vnpay.entities.SenderQueryDto</class>
+        <class>vn.vnpay.entities.PartnerConfigQueryDto</class>
+        <class>vn.vnpay.modal.BusinessModal</class>
+        <class>vn.vnpay.modal.ConfigPartnerModal</class>
+        <class>vn.vnpay.modal.GenericsModal</class>
+        <class>vn.vnpay.modal.KeywordModal</class>
+        <class>vn.vnpay.modal.PartnerModal</class>
+        <class>vn.vnpay.modal.ProviderChannelModal</class>
+        <class>vn.vnpay.modal.ProviderKeyModal</class>
+        <class>vn.vnpay.modal.ProviderModal</class>
+        <class>vn.vnpay.modal.ProviderPrefixModal</class>
+        <class>vn.vnpay.modal.RoutingModal</class>
+        <class>vn.vnpay.modal.SenderModal</class>
+        <class>vn.vnpay.modal.SenderPartnerModal</class>
+        <class>vn.vnpay.modal.SenderProviderModal</class>
+        <class>vn.vnpay.modal.SystemConfigModal</class>
+        <class>vn.vnpay.modal.UserModal</class>
+        <class>vn.vnpay.modal.UserEntities</class>
+        <class>vn.vnpay.modal.RoleModal</class>
+        <class>vn.vnpay.modal.GroupModal</class>
+        <class>vn.vnpay.modal.PermissionsModal</class>
+        <class>vn.vnpay.modal.RolePermissionModal</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" /> <!-- DB Driver -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.22.7.24:1521/VNPTEST" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.user" value="smsmnp" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="smsmnp" /> <!-- DB Password -->
+            <property name="hibernate.proc.param_null_passing" value ="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/> <!-- DB Dialect -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hikari.minimumIdle" value="5" />
+            <property name="hibernate.hikari.maximumPoolSize" value="10" />
+            <property name="hibernate.hikari.idleTimeout" value="30000" />
+            <property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider" />
+        </properties>
+    </persistence-unit>
+</persistence>
